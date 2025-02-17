@@ -1,0 +1,21 @@
+{
+	"name": "moreMagicWords",
+	"version": "0.1",
+	"author": [
+		"untitled7"
+	],
+	"license-name": "GPL-3.0-or-later",
+	"description": "Provides a magic word to retrieve the content model of a page",
+	"type": "parserhook",
+	"ExtensionMessagesFiles": {
+		"moreMagicWordsMagic": "moreMagicWords.i18n.magic.php"
+	},
+	"Hooks": {
+		"ParserGetVariableValueSwitch": "moreMagicWords::onParserGetVariableValueSwitch",
+		"GetMagicVariableIDs": "moreMagicWords::onGetMagicVariableIDs"
+	},
+	"AutoloadClasses": {
+		"moreMagicWords": "moreMagicWords.php"
+	},
+	"manifest_version": 2
+}
