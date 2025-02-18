@@ -1,21 +1,27 @@
 {
 	"name": "moreMagicWords",
-	"version": "0.1",
+	"version": "0.2",
 	"author": [
 		"untitled7"
 	],
 	"license-name": "GPL-3.0-or-later",
+	"url": "https://github.com/Thomas-programmiert/mediawiki-extensions-moreMagicWords",
 	"description": "Provides a magic word to retrieve the content model of a page",
 	"type": "parserhook",
-	"ExtensionMessagesFiles": {
-		"moreMagicWordsMagic": "moreMagicWords.i18n.magic.php"
-	},
-	"Hooks": {
-		"ParserGetVariableValueSwitch": "moreMagicWords::onParserGetVariableValueSwitch",
-		"GetMagicVariableIDs": "moreMagicWords::onGetMagicVariableIDs"
-	},
-	"AutoloadClasses": {
-		"moreMagicWords": "moreMagicWords.php"
-	},
+    "AutoloadNamespaces": {
+        "MediaWiki\\Extension\\moreMagicWords\\": "includes/"
+    },
+    "HookHandlers": {
+        "Registration": {
+            "class": "MediaWiki\\Extension\\moreMagicWords\\moreMagicWords"
+        }
+    },
+    "Hooks": {
+        "ParserGetVariableValueSwitch": "Registration",
+        "GetMagicVariableIDs": "Registration"
+    },
+    "ExtensionMessagesFiles": {
+        "moreMagicWordsMagic": "includes/moreMagicWords.i18n.magic.php"
+    },
 	"manifest_version": 2
 }
